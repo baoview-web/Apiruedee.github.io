@@ -1,1 +1,297 @@
-# Apiruedee.github.io
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apiruedee putkhao - Portfolio</title>
+    <style>
+        /* สไตล์พื้นฐานและโทนสีเขียวสิ่งแวดล้อม */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f7f5;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #2d5a27; /* เขียวเข้มใบไม้ */
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a3e4d7; /* เขียวมิ้นท์สว่างตอนโฮเวอร์ */
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(20, 40, 18, 0.9)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1920') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #a3e4d7;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        header .btn {
+            display: inline-block;
+            background-color: #4caf50; /* เขียวสด */
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        header .btn:hover {
+            background-color: #388e3c;
+        }
+
+        /* Sections ทั่วไป */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section h1 {
+            font-size: 2.5rem;
+            color: #2d5a27;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        section h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #4caf50;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2d5a27;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            max-width: 700px;
+            color: #4a5568;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .skills-list li {
+            background: #ffffff;
+            padding: 15px 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid #4caf50;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .contact-item strong {
+            color: #2d5a27;
+            display: inline-block;
+            width: 150px;
+        }
+
+        .contact-item a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            header h2 { font-size: 1.8rem; }
+            nav ul li { margin: 0 10px; }
+            .contact-item strong { display: block; margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#sop">My SOP</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>PORTFOLIO</h1>
+        <h2>APIRUEDEE PUTKHAO</h2>
+        <p>Environmental Student</p>
+        <a href="#about" class="btn">Explore Portfolio</a>
+    </header>
+
+    <section id="about">
+        <h1>About</h1>
+        <div class="about-container">
+            <img src="profile.jpg" alt="Apiruedee putkhao" class="profile-img">
+            <div class="about-text">
+                <p>Welcome to my portfolio! I am an Environmental Student passionate about ecological conservation, sustainable development, and environmental impact solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h1>Skills</h1>
+        <ul class="skills-list">
+            <li>• Environmental Science & Ecology</li>
+            <li>• Sustainable Resource Management</li>
+            <li>• Data Analysis & Field Research</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h1>Projects</h1>
+        <p style="color: #718096; font-style: italic;">Portfolio projects and environmental research works will be listed here.</p>
+    </section>
+
+    <section id="sop">
+        <h1>My SOP</h1>
+        <p style="color: #718096; font-style: italic;">Statement of Purpose (SOP) content goes here...</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Full Name:</strong> Apiruedee putkhao
+            </div>
+            <div class="contact-item">
+                <strong>Status:</strong> Environmental Student
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong> 0xx-xxx-xxxx </div>
+            <div class="contact-item">
+                <strong>Facebook:</strong> <a href="#" target="_blank">Apiruedee putkhao</a> </div>
+            <div class="contact-item">
+                <strong>E-mail:</strong> your-email@example.com </div>
+            <div class="contact-item">
+                <strong>Address:</strong> Thailand
+            </div>
+            <div class="contact-item">
+                <strong>School:</strong> [ใส่ชื่อโรงเรียน/มหาวิทยาลัยของคุณ]
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
